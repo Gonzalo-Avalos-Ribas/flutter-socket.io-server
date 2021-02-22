@@ -17,8 +17,11 @@
         socket.on('disconnect',function(){
             console.log('perdi comunicacion');
         })
-        socket.emit('mensaje',{nombre: 'Fernando'})
-        socket.on('mensaje',(payload) => console.log(payload));
+        socket.on('active-bands',(payload) => {
+            console.clear();
+            console.table(payload)
+        });
+
     </script>
 </body>
 </html>
